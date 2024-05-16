@@ -1,0 +1,14 @@
+/home/sub/Documents/SubEngine/build/CMakeFiles/edit_cache.dir
+/home/sub/Documents/SubEngine/build/CMakeFiles/rebuild_cache.dir
+/home/sub/Documents/SubEngine/build/src/CMakeFiles/source.dir
+/home/sub/Documents/SubEngine/build/src/CMakeFiles/edit_cache.dir
+/home/sub/Documents/SubEngine/build/src/CMakeFiles/rebuild_cache.dir
+/home/sub/Documents/SubEngine/build/libs/CMakeFiles/edit_cache.dir
+/home/sub/Documents/SubEngine/build/libs/CMakeFiles/rebuild_cache.dir
+/home/sub/Documents/SubEngine/build/libs/vulkan-headers/CMakeFiles/edit_cache.dir
+/home/sub/Documents/SubEngine/build/libs/vulkan-headers/CMakeFiles/rebuild_cache.dir
+/home/sub/Documents/SubEngine/build/libs/sdl/CMakeFiles/SDL3-shared.dir
+/home/sub/Documents/SubEngine/build/libs/sdl/CMakeFiles/SDL3_test.dir
+/home/sub/Documents/SubEngine/build/libs/sdl/CMakeFiles/uninstall.dir
+/home/sub/Documents/SubEngine/build/libs/sdl/CMakeFiles/edit_cache.dir
+/home/sub/Documents/SubEngine/build/libs/sdl/CMakeFiles/rebuild_cache.dir

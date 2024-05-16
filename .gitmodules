@@ -1,3 +1,6 @@
-[submodule "libs/vulkan-hpp"]
-	path = libs/vulkan-hpp
-	url = https://github.com/KhronosGroup/Vulkan-Hpp.git
+[submodule "libs/vulkan-headers"]
+	path = libs/vulkan-headers
+	url = https://github.com/KhronosGroup/Vulkan-Headers.git
+[submodule "libs/sdl"]
+	path = libs/sdl
+	url = https://github.com/libsdl-org/SDL.git

@@ -1,0 +1,3 @@
+[submodule "libs/vulkan-hpp"]
+	path = libs/vulkan-hpp
+	url = https://github.com/KhronosGroup/Vulkan-Hpp.git

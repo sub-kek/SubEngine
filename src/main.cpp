@@ -1,26 +1,47 @@
 #include <iostream>
 #include <stdlib.h>
+#include <stdexcept>
 
-#include <vulkan/vulkan.h>
+#include <SDL.h>
+#include <SDL_vulkan.h>
 
-int main() {
-    VkApplicationInfo appInfo = {};
+class SDLException : private std::runtime_error {
+    const int code;
+public:
+    explicit SDLException(const char *message, const int code = 0) : runtime_error(message), code{code} {}
+    [[nodiscard]] auto getCode() const noexcept {
+        return code;
+    }
+};
 
-    appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-    appInfo.pApplicationName = "Test Game";
-    appInfo.pEngineName = "SubEngine";
-
-    VkInstanceCreateInfo instanseInfo = {};
-
-    instanseInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
-    instanseInfo.pApplicationInfo = &appInfo;
-
-    VkInstance instance;
-
-    VkResult result = vkCreateInstance(&instanseInfo, 0, &instance);
-    if (result == VK_SUCCESS) {
-        std::cout << "Successfully created VK instance.\n";
+class SDL {
+public:
+    explicit SDL(SDL_InitFlags initFlags) {
+        if (auto error_code = SDL_Init(initFlags))
+            throw SDLException{SDL_GetError(), error_code};
     }
 
-    exit(EXIT_SUCCESS);
+    ~SDL() {
+        SDL_Quit();
+    }
+
+    SDL(const SDL&) = delete;
+    const SDL& operator = (const SDL&) = delete;
+};
+
+class VulkanLibrary {
+    explicit VulkanLibrary(const char *path = nullptr) {
+        if (const auto error_code = SDL_Vulkan_LoadLibrary(path))
+            throw SDLException{SDL_GetError(), error_code};
+    }
+
+    ~VulkanLibrary() {
+
+    }
+};
+
+int main() {
+    SDL sdl{SDL_INIT_VIDEO};
+
+    return EXIT_SUCCESS;
 }
